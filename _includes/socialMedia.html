@@ -1,0 +1,7 @@
+<ul class="flex">
+  {% for item in site.data.social-media %}
+  <li class="mx-2">
+    <a href="{{ item.link }}">{{ item.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
