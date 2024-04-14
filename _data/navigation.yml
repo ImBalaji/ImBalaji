@@ -1,8 +1,12 @@
 - name: Home
+  icon: fa-solid fa-house
   link: /
 - name: About
+  icon: fa-solid fa-circle-info
   link: /about.html
 - name: Blog
+  icon: fa-solid fa-pen-to-square
   link: /blog.html
 - name: Contact
+  icon: fa-solid fa-address-card
   link: /contact.html

@@ -1,10 +1,26 @@
+<style>
+  .t:hover {
+    border-width: 0; 
+    border-top-left-radius: 0.35rem;
+    border-top-right-radius: 0.35rem; 
+    border-bottom-right-radius: 0.35rem; 
+    border-bottom-left-radius: 0.35rem;
+  }
+</style>
 
 <nav>
-    <ul>
-        {% for item in site.data.navigation %}
-        <li class="my-4">
-          <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>{{ item.name }}</a>
-        </li>
-        {% endfor %}
-    </ul>
+  <ul>
+    {% for item in site.data.navigation %}
+    
+    <a href="{{ item.link }}">
+      <li class="my-4 p-2 hover:bg-gray-50 t" {% if page.url==item.link %}style="background: #e2e8f0; border-width: 0; border-top-left-radius: 0.35rem;
+      border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; border-bottom-left-radius: 0.35rem;" {%
+        endif %}>
+          <i class="{{ item.icon }}"></i>
+          <span class="ps-4">{{ item.name }}</span>
+      </li>
+    </a>
+    
+    {% endfor %}
+  </ul>
 </nav>

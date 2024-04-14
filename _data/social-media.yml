@@ -1,10 +1,15 @@
-- name: Tw
+- name: Twitter
+  icon: fa-brands fa-x-twitter fa-2x
   link: https://twitter.com/BalajiSm
-- name: Fa
+- name: Facebook
+  icon: fa-brands fa-facebook fa-2x
   link: https://facebook.com/BalajiSm
-- name: Li
+- name: LinkedIn
+  icon: fa-brands fa-linkedin fa-2x
   link: https://linkedin.com/BalajiSm
-- name: Mail
+- name: GMail
+  icon: fa-solid fa-envelope fa-2x
   link: balaji2690@gmail.com
-- name: Gh
+- name: Github
+  icon: fa-brands fa-github fa-2x
   link: https://github.com/ImBalaji

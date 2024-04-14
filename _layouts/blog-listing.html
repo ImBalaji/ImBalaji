@@ -1,113 +1,63 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
+---
+layout: default
+---
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ " ./assets/css/output.css" | relative_url }}">
-    <script src="https://kit.fontawesome.com/d6d5ce6d24.js" crossorigin="anonymous" defer></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
-</head>
+<main x-data="{ open: false }" class="flex">
+  <!-- SideBar -->
+  {% include sidebar.html %}
 
-<body>
-    <!-- <aside class="grid grid-cols-12 dark:bg-black lg:grid-cols-11 xl:grid-cols-12">
-        <div class="lg:row-span-full lg:block lg:col-span-3 xl:col-span-2 bg-red-400 shimmer">
-            {% include header.html %}
-        </div>       
-        <div class="row-span-full col-span-12 h-screen bg-orange-500 lg:col-span-8 xl:col-span-8 p-5">
-            
-            <div class="flex justify-between lg:hidden">
-                <i class="fa-solid fa-bars"></i>
-                {{ page.title }} 
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-            {{ content }}
+  <!-- Main Section -->
+  <section class="w-full lg:flex lg:justify-between lg:container p-5" x-cloak>
+    <div class="flex flex-col lg:container">
+      <header aria-label="Top Bar">
+        <div class="flex flex-row items-center justify-between h-100">
+          <button class="lg:hidden" @click="open = !open">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div>{{ page.title }}</div>
+          <nav class="hidden lg:block" aria-label="Breadcrumb">Home</nav>
+          <search>
+            <i class="fas fa-search fa-fw"></i>
+          </search>
         </div>
-    </aside> -->
+      </header>
+      <div class="flex flex-col lg:flex-row grow">
+        <main class="lg:basis-2/3 lg:container">
+          <div>
+            <article class="block h-screen w-auto grow-0">
+              <ul>
+                {% for post in site.posts %}
+                <li>
+                  <a href="{{ post.url }}">{{ post.title }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </article>
+          </div>
+        </main>
+        <aside class="basis-1/3 ps-2 mb-5 hidden lg:block">
+          <div class="flex flex-col gap-y-10">
+            <!-- Get 5 last posted/updated posts -->
+            <section>
+              <h2>Recently Updated</h2>
 
-    <main x-data="{ open: false }" class="flex">
-
-        <div>
-            <!-- Shows the header block in sm and md device -->
-            <aside class="h-screen sticky top-0 flex-col items-center p-10 lg:hidden flex bg-slate-200" 
-                    :class="open ? 'transform-active' : 'transform'" 
-                    x-cloak
-                >
-                {% include header.html %}
-            </aside>
-
-            <!-- Shows the header block in lg and extra lg device -->
-            <aside class="h-screen sticky top-0 flex-col items-center p-10 hidden lg:flex bg-slate-200" x-cloak>
-                {% include header.html %}
-            </aside>
-        </div>
-
-        <section class="w-full lg:flex lg:justify-between lg:container p-5" x-cloak>
-            <div class="flex flex-col lg:container">
-                <header aria-label="Top Bar">
-                    <div class="flex flex-row items-center justify-between h-100">
-                        <button class="lg:hidden" @click="open = !open">
-                            <i class="fa-solid fa-bars"></i>
-                        </button>
-                        <div>
-                            {{ page.title }}
-                        </div>
-                        <nav class="hidden lg:block" aria-label="Breadcrumb">
-                            Home
-                        </nav>
-                        <search>
-                            <i class="fas fa-search fa-fw"></i>
-                        </search>
-                    </div>
-                </header>
-                <div class="flex flex-col lg:flex-row grow border border-sky-500">
-                    <main class="lg:basis-2/3 border lg:container border-red-500">
-
-
-                            <div>
-                                <article class="block h-screen w-auto grow-0">
-                                    <ul>
-                                        {% for post in site.posts %}
-                                          <li>
-                                            <a href="{{ post.url }}">{{ post.title }}</a>
-                                          </li>
-                                        {% endfor %}
-                                      </ul>
-                                </article>
-                            </div>
-
-
-                    </main>
-                    <aside class="basis-1/3 ps-2 mb-5 hidden lg:block">
-                        <div class="flex flex-col gap-y-10">
-                            <!-- Get 5 last posted/updated posts -->
-                            <section>
-                                <h2>Recently Updated</h2>
-                                
-                                {% for post in site.posts %}
-                                {{post.last_modified_at}}
-                                {% endfor %}
-                                <ul>
-                                    <li></li>
-                                </ul>
-                            </section>
-                            <section>
-                                <h2>Trending Tags</h2>
-                                <div>
-                                    <a href="" class="flex flex-wrap mt-3 mb-1 me-3"></a>
-                                </div>
-                            </section>
-                        </div>
-                    </aside>
-                </div>
-                <div>
-                    <footer></footer>
-                </div>
-            </div>
-        </section>
-       
-    </main>
-</body>
-
-</html>
+              <ul>
+                {% include update-list.html %}
+              </ul>
+            </section>
+            <section>
+              <h2>Trending Tags</h2>
+              <div>
+                <a href="" class="flex flex-wrap mt-3 mb-1 me-3"></a>
+              </div>
+              {% include trending-tags.html %}
+            </section>
+          </div>
+        </aside>
+      </div>
+      <div>
+        <footer></footer>
+      </div>
+    </div>
+  </section>
+</main>

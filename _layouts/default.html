@@ -1,13 +1,21 @@
+---
+layout: compress
+---
+
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
+
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "./assets/css/output.css" | relative_url }}">
+    <script defer src="https://kit.fontawesome.com/d6d5ce6d24.js" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
   </head>
+
   <body>
-    <p class="text-gray-500">The quick brown foxd...</p>
+
     {{ content }}
   </body>
 </html>

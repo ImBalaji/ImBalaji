@@ -6,3 +6,8 @@ title: "" # the name of your site, e.g. ACME Corp.
 #   - jekyll-postcss
 # postcss:
 #   cache: false
+
+plugins:
+  - jekyll-last-modified-at
+last-modified-at:
+  date-format: "%y-%m-%d %H:%M:%S"

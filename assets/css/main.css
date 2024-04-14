@@ -6,14 +6,23 @@
   display: none !important;
 }
 
-.transform-active {
+.sidebarClass {
+  position: sticky;
+  top: 0px;
+  flex-direction: column;
+  align-items: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+}
+
+.sidebar-active {
   animation-name: sidebar-open;
   animation-duration: 0.5s;
   animation-iteration-count: 1;
   animation-timing-function: ease;
 }
 
-.transform {
+.sidebar-close {
   animation-name: sidebar-close;
   animation-duration: 0.5s;
   animation-iteration-count: 1;

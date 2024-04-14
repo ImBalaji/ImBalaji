@@ -1,0 +1,34 @@
+<!-- Liquid function -->
+{% capture sidebar_content %}
+<div class="flex flex-col justify-between gap-y-16 h-screen py-10">
+  <div class="ps-[2rem]">
+    <div class="bg-slate-400 h-28 w-28"></div>
+    <p class="mt-5 text-2xl font-bold text-gray-300 dark:text-gray-300">
+      Balaji
+    </p>
+    <p class="italic text-base mt-3 text-gray-300 dark:text-gray-300">
+      Laravel Developer
+    </p>
+  </div>
+  <div class="my-auto dark:text-gray-400 w-full px-5">
+    {% include navigation.html %}
+  </div>
+  <div class="row-span-2 dark:text-gray-400">
+    {% include socialMedia.html %}
+  </div>
+</div>
+{% endcapture %}
+<!-- #################### -->
+
+<div class="flex lg:hidden">
+  <aside
+    :class="open ? 'sidebar-active' : 'sidebar-close'"
+    class="sidebarClass"
+    x-cloak
+  >
+    {{ sidebar_content }}
+  </aside>
+</div>
+<div class="hidden lg:flex">
+  <aside class="sidebarClass" x-cloak>{{ sidebar_content }}</aside>
+</div>

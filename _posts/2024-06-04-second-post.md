@@ -1,8 +1,8 @@
 ---
-title: Text and Typography
+title: Second Post
 description: Examples of text, typography, math equations, diagrams, flowcharts, pictures, videos, and more.
 author: cotes
-date: 2019-08-08 11:31:00
+date: 2019-08-08 11:32:00
 categories: [Blogging, Demo]
 tags: [typography]
 pin: false
@@ -16,4 +16,4 @@ image:
 
 ## Headings
 
-Hai I'm the Fist Post
+Yeah It's Meee
