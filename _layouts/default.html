@@ -17,5 +17,21 @@ layout: compress
   <body>
 
     {{ content }}
+
+    <!-- Listen for window click event -->
+    <script>
+        
+        function handleClick(e) {
+          
+          const element = document.getElementById("sidebarSlider");
+          alert(open);
+          if (element.classList.contains("sidebar-active")) {
+            element.classList.remove("sidebar-active");
+            element.classList.add("sidebar-close");            
+          } 
+        }
+      
+    </script>
+
   </body>
 </html>

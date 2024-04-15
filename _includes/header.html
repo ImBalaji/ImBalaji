@@ -1,0 +1,15 @@
+<header aria-label="Top Bar">
+  <div class="flex flex-row items-center justify-between pt-5 pb-12">
+    <div>Logo</div>
+    <div>{{ page.title }}</div>
+    <nav class="hidden lg:block" aria-label="Breadcrumb">Home</nav>
+    <div class="flex space-x-5 text-xl">
+      <search>
+        <i class="fas fa-search fa-fw"></i>
+      </search>
+      <button class="lg:hidden z-10" @click="toggle()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+</header>
