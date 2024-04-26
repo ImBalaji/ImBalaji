@@ -4,7 +4,7 @@
     border-top-left-radius: 0.35rem;
     border-top-right-radius: 0.35rem; 
     border-bottom-right-radius: 0.35rem; 
-    border-bottom-left-radius: 0.35rem;
+    border-bottom-left-radius: 0.35rem; 
   }
 </style>
 
@@ -13,11 +13,12 @@
     {% for item in site.data.navigation %}
     
     <a href="{{ item.link }}">
-      <li class="my-4 p-2 hover:bg-gray-50 t" {% if page.url==item.link %}style="background: #e2e8f0; border-width: 0; border-top-left-radius: 0.35rem;
+      
+      <li class="my-4 p-2 hover:bg-gray-50 t flex" {% if page.url==item.link %}style="background: #e2e8f0; border-width: 0; border-top-left-radius: 0.35rem;
       border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; border-bottom-left-radius: 0.35rem;" {%
         endif %}>
-          <i class="{{ item.icon }}"></i>
-          <span class="ps-4">{{ item.name }}</span>
+          <!-- <img src="{{ item.icon }}" alt="{{ item.alt }}" width="25" height="25" /> -->
+          <span class="ps-4 font-extrabold">{{ item.name }}</span>
       </li>
     </a>
     

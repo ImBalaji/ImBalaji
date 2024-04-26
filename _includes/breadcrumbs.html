@@ -1,0 +1,19 @@
+<div class="flex flex-row xl:justify-between">
+  <div class="lg:basis-1/12"></div>
+  <nav
+    id="breadcrumbs"
+    class="hidden lg:block text-lg font-semibold lg:basis-11/12 capitalize"
+  >
+    {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
+    <a href="/" class="hover:underline">Home</a>
+
+    {% for crumb in crumbs offset: 1 %} {% if forloop.last %} / {{ page.title }}
+    {% else %} /
+    <a
+      href="{% assign crumb_limit = forloop.index | plus: 1 %}{% for crumb in crumbs limit: crumb_limit %}{{ crumb | append: '/' | replace:'without-plugin/','without-plugins/' }}{% endfor %}"
+      class="hover:underline"
+      >{{ crumb | replace:'-',' ' | remove:'.html' | capitalize }}</a
+    >
+    {% endif %} {% endfor %}
+  </nav>
+</div>

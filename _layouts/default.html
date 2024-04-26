@@ -8,30 +8,16 @@ layout: compress
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <title>{{ page.title }} - {{ site.title }}</title>
-    <link rel="stylesheet" href="{{ "./assets/css/output.css" | relative_url }}">
-    <script defer src="https://kit.fontawesome.com/d6d5ce6d24.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ "./assets/css/output.css" | relative_url }}" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
+    {% seo %}
   </head>
 
   <body>
 
     {{ content }}
-
-    <!-- Listen for window click event -->
-    <script>
-        
-        function handleClick(e) {
-          
-          const element = document.getElementById("sidebarSlider");
-          alert(open);
-          if (element.classList.contains("sidebar-active")) {
-            element.classList.remove("sidebar-active");
-            element.classList.add("sidebar-close");            
-          } 
-        }
-      
-    </script>
-
+    
   </body>
+  <!-- Footer -->
+{% include footer.html %}
 </html>

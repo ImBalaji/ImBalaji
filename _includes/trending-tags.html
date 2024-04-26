@@ -13,14 +13,16 @@ trending_tags contains tag_name %} {% assign trending_tags = trending_tags |
 push: tag_name %} {% break %} {% endunless %} {% endif %} {% endfor %} {% endfor
 %} {% if trending_tags.size > 0 %}
 <section>
-  <h2 class="panel-heading">
-    {{- site.data.locales[include.lang].panel.trending_tags -}}
+  <h2 class="text-2xl font-bold mb-2">
+    <!-- {{- site.data.locales[include.lang].panel.trending_tags -}} -->
+    Tags
   </h2>
-  <div class="flex flex-wrap mt-3 mb-1 me-3">
+  <div class="flex flex-wrap">
     {% for tag_name in trending_tags %} {% assign url = tag_name | slugify |
-    url_encode | prepend: '/tags/' | append: '/' %}
+    url_encode | append: '/' %}
+
     <a
-      class="border border-sky-500 px-2 rounded-full"
+      class="ps-2 text-lg underline tracking-wider capitalize hover:font-semibold"
       href="{{ url | relative_url }}"
       >{{ tag_name }}</a
     >

@@ -1,15 +1,21 @@
 - name: Twitter
-  icon: fa-brands fa-x-twitter fa-2x
+  icon: /assets/images/icons/x-twitter.svg
+  alt: twitter icon
   link: https://twitter.com/BalajiSm
 - name: Facebook
-  icon: fa-brands fa-facebook fa-2x
+  icon: /assets/images/icons/facebook.svg
+  alt: facebook icon
   link: https://facebook.com/BalajiSm
 - name: LinkedIn
-  icon: fa-brands fa-linkedin fa-2x
+  icon: /assets/images/icons/linkedin.svg
+  sharehref: https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}
+  alt: linkedin icon
   link: https://linkedin.com/BalajiSm
 - name: GMail
-  icon: fa-solid fa-envelope fa-2x
+  icon: /assets/images/icons/envelope.svg
+  alt: envelope icon
   link: balaji2690@gmail.com
 - name: Github
-  icon: fa-brands fa-github fa-2x
+  icon: /assets/images/icons/github.svg
+  alt: github icon
   link: https://github.com/ImBalaji

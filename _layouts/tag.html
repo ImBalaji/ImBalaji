@@ -1,0 +1,29 @@
+---
+layout: blog
+---
+
+<main
+  x-data="{ open: false, 
+    toggle() { this.open = ! this.open }, }"
+  class="flex"
+>
+  <!-- Main Section -->
+  <section
+    class="w-full lg:flex lg:flex-col lg:justify-between lg:container xl:basis-10/12"
+    x-cloak
+  >
+    <!-- <h1 class="text-3xl font-bold">{{ page.title }} Archives</h1> -->
+    <ul class="mt-3">
+      {% for post in page.posts %}
+      <a href="{{ post.url | relative_url }}" class="text-xl">
+        <li class="card-tag mb-3 last:mb-0">
+          {{ post.title }}
+          <span class="ps-3"
+            >{{ post.last_modified_at | date: "%b %-d, %Y" }}</span
+          >
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+  </section>
+</main>

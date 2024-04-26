@@ -1,8 +1,9 @@
-<ul class="flex justify-between">
+<ul class="flex flex-row">
   {% for item in site.data.social-media %}
   <li class="px-4">
     <a href="{{ item.link }}" style="font-size: 0.65rem" class="">
-      <i class="{{ item.icon }} hover:text-white "> </i>
+      <!-- <i class="{{ item.icon }} hover:text-white "> </i> -->
+      <img src="{{ item.icon }}" alt="{{ item.alt }}" width="15" height="15" />
     </a>
   </li>
   {% endfor %}

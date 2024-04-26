@@ -1,6 +1,6 @@
 <!-- Liquid function -->
 {% capture sidebar_content %}
-<div class="flex flex-col justify-between gap-y-16 h-screen py-10">
+<div class="flex flex-col justify-between gap-y-16 py-10 h-fit">
   <div class="ps-[2rem]">
     <div class="bg-slate-400 h-28 w-28"></div>
     <p class="mt-5 text-2xl font-bold text-gray-300 dark:text-gray-300">
@@ -13,23 +13,23 @@
   <div class="my-auto dark:text-gray-400 w-full px-5">
     {% include navigation.html %}
   </div>
-  <div class="row-span-2 dark:text-gray-400">
-    {% include socialMedia.html %}
-  </div>
 </div>
+
 {% endcapture %}
 <!-- #################### -->
 
-<div class="flex lg:hidden">
+<div class="flex sidebarClass bg-slate-200">
   <aside
     id="sidebarSlider"
     :class="open ? 'sidebar-active' : 'sidebar-close'"
-    class="sidebarClass"
+    class="sticky top-0 h-screen"
+    x-show="open"
     x-cloak
   >
     {{ sidebar_content }}
   </aside>
 </div>
-<div class="hidden lg:flex">
-  <aside class="sidebarClass" x-cloak>{{ sidebar_content }}</aside>
-</div>
+
+<!-- <div class="hidden lg:flex sidebarClass basis-2/12">
+  <aside class="sticky top-0 h-screen" x-cloak> sidebar_content</aside>
+</div> -->

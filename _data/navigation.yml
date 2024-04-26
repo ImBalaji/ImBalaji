@@ -1,12 +1,16 @@
 - name: Home
-  icon: fa-solid fa-house
+  icon: /assets/images/icons/house.svg
+  alt: home icon
   link: /
 - name: About
-  icon: fa-solid fa-circle-info
-  link: /about.html
-- name: Blog
-  icon: fa-solid fa-pen-to-square
-  link: /blog.html
-- name: Contact
-  icon: fa-solid fa-address-card
-  link: /contact.html
+  icon: /assets/images/icons/circle-info.svg
+  alt: about icon
+  link: /about
+# - name: Blog
+#   icon: /assets/images/icons/pen-to-square.svg
+#   alt: blog icon
+#   link: /blogging/demo/fifth-post
+# - name: Contact
+#   icon: /assets/images/icons/address-card.svg
+#   alt: contact icon
+#   link: /contact.html

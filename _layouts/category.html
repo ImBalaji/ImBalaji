@@ -1,0 +1,21 @@
+---
+layout: blog
+# The Category layout
+---
+
+<div class="flex flex-row justify-start xl:justify-between pb-4">
+  <section class="w-full xl:basis-10/12">
+    <ul class="mt-3">
+      {% for post in page.posts %}
+      <a href="{{ post.url | relative_url }}" class="text-xl">
+        <li class="card-tag mb-3">
+          {{ post.title }}
+          <span class="ps-3"
+            >{{ post.last_modified_at | date: "%b %-d, %Y" }}</span
+          >
+        </li>
+      </a>
+      {% endfor %}
+    </ul>
+  </section>
+</div>

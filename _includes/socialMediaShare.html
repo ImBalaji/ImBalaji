@@ -1,0 +1,49 @@
+<nav class="flex justify-end items-end">
+  <ul class="flex">
+    <li>
+      <a
+        href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ site.baseurl }}{{ page.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Share on Twitter"
+      >
+        <img
+          src="/assets/images/icons/x-twitter.svg"
+          alt="Twitter icon"
+          width="15"
+          height="15"
+        />
+      </a>
+    </li>
+    <li class="ps-6">
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Share on Facebook"
+      >
+        <img
+          src="/assets/images/icons/facebook.svg"
+          alt="Facebook icon"
+          width="15"
+          height="15"
+        />
+      </a>
+    </li>
+    <li class="ps-6">
+      <a
+        href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ site.baseurl }}{{ page.url }}&title={{ page.title }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Share on LinkedIn"
+      >
+        <img
+          src="/assets/images/icons/linkedin.svg"
+          alt="LinkedIn icon"
+          width="15"
+          height="15"
+        />
+      </a>
+    </li>
+  </ul>
+</nav>
