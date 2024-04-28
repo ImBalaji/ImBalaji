@@ -2,84 +2,77 @@
 layout: default
 ---
 
-<main
-  x-data="{ open: false, 
-    toggle() { this.open = ! this.open } }"
-  class="flex justify-between "
->
-  <!-- SideBar -->
-  {% include sidebar.html %}
+<main class="flex justify-between w-full">
+  <div class="basis-full flex flex-col">
+    <!-- Article Section -->
+    <article class="w-full lg:flex lg:flex-col lg:justify-between" x-cloak>
+      <div class="p-5">
+        {% include header.html %} {% if page.url != '/' %} {% include
+        breadcrumbs.html %} {% endif %} {% if page.id %}
 
-  <!-- Article Section -->
-  <article class="w-full lg:flex lg:flex-col lg:justify-between" x-cloak>
-    <div class="p-5">
-      {% include header.html %} {% if page.url != '/' %} {% include
-      breadcrumbs.html %} {% endif %} {% if page.id %}
-
-      <div class="flex flex-row justify-start xl:justify-between lg:pt-10 px-2">
-        <div class="lg:basis-1/12"></div>
-        <header class="basis-full lg:basis-9/12">
-          <h1 class="text-2xl md:text-3xl lg:text-5xl font-semibold pt-4 text-wrap">{{ page.title }}</h1>
-          <div class="flex flex-row justify-between lg:items-end pt-4">
-            <div class="text-sm italic flex flex-row justify-between lg:basis-9/12 xl:basis-11/12">
-              <div class="flex flex-col md:flex-row">
-                <time class="hidden lg:block" datetime="{{ page.date | date: "%Y-%m-%dT%H:%M:%S"}}" pubdate>
-                  Posted on:
-                  <span>{{ page.date | date_to_long_string: "ordinal" }}.</span>
-                </time>
-                {% if page.last_modified_at %}
-               
-                <time datetime="{{ page.last_modified_at | date: "%Y-%m-%dT%H:%M:%S" }}" last-modified>
-                  Modified on:
-                  <span>{{ page.last_modified_at | date_to_long_string: "ordinal"}}.</span>
-                </time>
-                {% endif %}
+        <div class="flex flex-row justify-start xl:justify-between lg:pt-10 px-2">
+          <div class="lg:basis-1/12"></div>
+          <header class="basis-full lg:basis-9/12">
+            <h1 class="text-2xl md:text-3xl lg:text-5xl font-semibold pt-4 text-wrap">{{ page.title }}</h1>
+            <div class="flex flex-row justify-between lg:items-end pt-4">
+              <div class="text-sm italic flex flex-row justify-between lg:basis-9/12 xl:basis-11/12">
+                <div class="flex flex-col md:flex-row">
+                  <time class="hidden lg:block" datetime="{{ page.date | date: " %Y-%m-%dT%H:%M:%S"}}" pubdate>
+                    Posted on:
+                    <span>{{ page.date | date_to_long_string: "ordinal" }}.</span>
+                  </time>
+                  {% if page.last_modified_at %}
+                  &nbsp;&nbsp;
+                  <time datetime="{{ page.last_modified_at | date: " %Y-%m-%dT%H:%M:%S" }}" last-modified>
+                    Updated on:
+                    <span>{{ page.last_modified_at | date_to_long_string: "ordinal"}}.</span>
+                  </time>
+                  {% endif %}
+                </div>
+                <div class="hidden lg:block items-end">
+                  {% include socialMediaShare.html %}
+                </div>
               </div>
-              <div class="hidden lg:block items-end">
+              <div class="block lg:hidden">
                 {% include socialMediaShare.html %}
               </div>
             </div>
-            <div class="block lg:hidden">
-              {% include socialMediaShare.html %}
-            </div>
-          </div>
-        </header>
-        <div class="xl:basis-4/12"></div>
-      </div>
-      <div class="flex flex-col lg:flex-row">
-        <div class="lg:basis-1/12"></div>        
-        <div class="card-article lg:basis-9/12">
-          <section class="lg:container markdown-body">
-            {{ content | markdownify }}
-          </section>
+          </header>
+          <div class="xl:basis-4/12"></div>
         </div>
-        <div class="lg:basis-2/12 xl:basis-4/12"></div>
-      
-      </div>
-      {% else %}
-      <div class="flex flex-row justify-between">
-        <div class="hidden xl:block xl:basis-1/12"></div>
-        {% if page.type != "tag" and page.type != "category" %}
-        <h1 class="text-5xl font-semibold py-4 text-wrap overflow-hidden basis-11/12">
-          Latest in the Blog
-        </h1>
+        <div class="flex flex-col lg:flex-row">
+          <div class="lg:basis-1/12"></div>
+          <div class="card-article lg:basis-9/12">
+            <section class="lg:container markdown-body">
+              {{ content | markdownify }}
+            </section>
+          </div>
+          <div class="lg:basis-2/12 xl:basis-4/12"></div>
+
+        </div>
         {% else %}
-        <h1 class="text-5xl font-semibold py-4 mt-10 text-wrap overflow-hidden capitalize xl:basis-11/12">
-          {{ page.title }} Archives <span class="text-3xl">({{ page.posts | size }})</span>
-        </h1>
+        <div class="flex flex-row justify-between">
+          <div class="hidden xl:block xl:basis-1/12"></div>
+          {% if page.type != "tag" and page.type != "category" %}
+          <h1 class="text-2xl md:text-3xl lg:text-5xl font-semibold py-4 text-wrap overflow-hidden basis-11/12">
+            Latest in the Blog
+          </h1>
+          {% else %}
+          <h1 class="text-2xl md:text-3xl lg:text-5xl font-semibold py-4 mt-10 text-wrap overflow-hidden capitalize xl:basis-11/12">
+            {{ page.title }} Archives <span class="text-2xl md:text-3xl lg:text-5xl font-semibold">({{ page.posts | size }})</span>
+          </h1>
+          {% endif %}
+        </div>
+        <div class="flex flex-col lg:flex-row">
+          <div class="xl:basis-1/12"></div>
+          <div class="w-full xl:basis-11/12">
+            <section class="lg:container">{{ content }}</section>
+          </div>
+          <div class="xl:basis-1/12"></div>
+          {% include recent-posts.html %}
+        </div>
         {% endif %}
       </div>
-      <div class="flex flex-col lg:flex-row">
-        <div class="xl:basis-1/12"></div>
-        <div class="w-full xl:basis-11/12">
-          <section class="lg:container">{{ content }}</section>
-        </div>
-        <div class="xl:basis-1/12"></div>
-        {% include recent-posts.html %}
-      </div>
-      {% endif %}
-    </div>
-  </article>
+    </article>
+  </div>
 </main>
-
-

@@ -9,16 +9,16 @@
 </style>
 
 <nav>
-  <ul>
+  <ul class="mt-12">
     {% for item in site.data.navigation %}
     
     <a href="{{ item.link }}">
       
-      <li class="my-4 p-2 hover:bg-gray-50 t flex" {% if page.url==item.link %}style="background: #e2e8f0; border-width: 0; border-top-left-radius: 0.35rem;
-      border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; border-bottom-left-radius: 0.35rem;" {%
+      <li class="my-4 text-gray-300 hover:bg-gray-800 t flex" {% if page.url==item.link %}style="background: #e2e8f0; border-width: 0; border-top-left-radius: 0.35rem;
+      border-top-right-radius: 0.35rem; border-bottom-right-radius: 0.35rem; border-bottom-left-radius: 0.35rem; color: black" {%
         endif %}>
           <!-- <img src="{{ item.icon }}" alt="{{ item.alt }}" width="25" height="25" /> -->
-          <span class="ps-4 font-extrabold">{{ item.name }}</span>
+          <span class="p-1 px-8 font-semibold text-xl ">{{ item.name }}</span>
       </li>
     </a>
     

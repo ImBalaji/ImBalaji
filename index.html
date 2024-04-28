@@ -1,0 +1,22 @@
+---
+layout: blog
+---
+
+<article
+  class="w-auto grow-0 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4"
+>
+  <!-- <ul> -->
+  {% for post in site.posts %}
+  <!-- <li class="mb-10"> -->
+  <a href="{{ post.url }}">
+    <div class="card-list-post">
+      <!-- Insert Image here -->
+    </div>
+    <h3 class="pt-3 ps-3 text-lg lg:text-xl font-medium text-wrap">
+      {{ post.title }}
+    </h3>
+  </a>
+  <!-- </li> -->
+  {% endfor %}
+  <!-- </ul> -->
+</article>

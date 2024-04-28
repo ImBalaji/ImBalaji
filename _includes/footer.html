@@ -1,10 +1,10 @@
-<footer
-  class="flex justify-between items-center bg-slate-400 px-2 lg:px-10 py-5"
->
-  <div class="flex flex-col justify-between items-baseline">
-    <div class="dark:text-gray-400">{% include socialMedia.html %}</div>
-  </div>
-  <div>
-    <span class="text-sm">&#169; {{ "now" | date: "%Y" }} Nextle </span>
+<footer class="flex justify-center items-center px-2 lg:px-10 py-5">
+  <div class="flex justify-between lg:justify-start items-end px-10">
+    <div>
+      <span class="text-sm">&#169; {{ "now" | date: "%Y" }} Nextle </span>
+    </div>
+    <div class="flex flex-col justify-between items-baseline ps-8">
+      <div class="dark:text-gray-400">{% include socialMedia.html %}</div>
+    </div>
   </div>
 </footer>

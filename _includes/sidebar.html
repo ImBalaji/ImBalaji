@@ -1,35 +1,38 @@
 <!-- Liquid function -->
 {% capture sidebar_content %}
-<div class="flex flex-col justify-between gap-y-16 py-10 h-fit">
-  <div class="ps-[2rem]">
-    <div class="bg-slate-400 h-28 w-28"></div>
-    <p class="mt-5 text-2xl font-bold text-gray-300 dark:text-gray-300">
-      Balaji
-    </p>
-    <p class="italic text-base mt-3 text-gray-300 dark:text-gray-300">
-      Laravel Developer
-    </p>
-  </div>
-  <div class="my-auto dark:text-gray-400 w-full px-5">
+<div class="flex flex-col justify-between py-10">
+  <!-- <div class="ps-[1rem]"> -->
+  <!-- <div class="h-28 w-28"></div>   -->
+  <p class="mt-5 text-2xl font-semibold text-gray-300 dark:text-gray-300">
+    Balaji
+  </p>
+  <p class="italic text-base mt-3 text-gray-300 dark:text-gray-300">
+    Laravel Developer
+  </p>
+  <!-- </div> -->
+  <div class="my-auto dark:text-gray-400 w-full">
     {% include navigation.html %}
   </div>
 </div>
 
 {% endcapture %}
 <!-- #################### -->
-
-<div class="flex sidebarClass bg-slate-200">
+<div id="mySidenav" class="sidenav">
+  <button>
+    <a
+      href="javascript:void(0)"
+      class="closebtn text-gray-50"
+      onclick="closeNav()"
+      >&times;</a
+    >
+  </button>
   <aside
     id="sidebarSlider"
     :class="open ? 'sidebar-active' : 'sidebar-close'"
-    class="sticky top-0 h-screen"
+    class="sticky top-0 w-screen flex px-10"
     x-show="open"
     x-cloak
   >
     {{ sidebar_content }}
   </aside>
 </div>
-
-<!-- <div class="hidden lg:flex sidebarClass basis-2/12">
-  <aside class="sticky top-0 h-screen" x-cloak> sidebar_content</aside>
-</div> -->
